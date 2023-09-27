@@ -6,12 +6,12 @@ public class myStringMethods {
 
 
     public static void main(String[] args) {
-        System.out.println("Enter any string");
+        System.out.println("Enter your email");
         Scanner s = new Scanner(System.in);
-        String word = s.nextLine();
-        System.out.println("Enter the character you want to count");
-       String reverseWord = reverseString(word);
-       System.out.println(reverseWord);
+        String email = s.nextLine();
+        boolean isEmailValid = isEmailValid(email);
+        System.out.println(isEmailValid);
+  
     }
     
 
@@ -40,6 +40,40 @@ public class myStringMethods {
         }
 
         return howManyCharacters;
+
+    }
+
+    public static boolean isEmailValid(String email){
+
+        boolean isEmailValid;
+        String emailEnding[] = {".com",".org",".edu",".se"};
+        
+   for (int i = 0; i<= email.length(); i++){
+  int characterLocation = email.indexOf('@', i);
+    
+   if (characterLocation <0) {
+    isEmailValid = false;
+    System.out.println("Ivalid email, no @");
+    return isEmailValid;
+   }
+
+      if (characterLocation> 0) {
+    for (int j =0; j <= emailEnding.length; j++){
+       boolean doesEmailEndWith = email.endsWith(emailEnding[j]);
+
+       if(doesEmailEndWith == true){
+        isEmailValid = true;
+        return isEmailValid;
+       }
+    }
+   } 
+   
+   }
+
+
+
+   isEmailValid = false;
+   return isEmailValid;
 
     }
 }
