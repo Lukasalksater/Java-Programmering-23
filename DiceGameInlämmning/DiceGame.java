@@ -45,23 +45,23 @@ public class DiceGame {
         player.rollDice(playerDice);
         
 
-        System.out.println ("The dice value is " + playerDice.getCurrentValue());
+        System.out.println (  player.getPlayerName() +", The dice value is " + playerDice.getCurrentValue());
 
         if (guess == playerDice.getCurrentValue()) {
 
             player.increaseScore();
 
-            System.out.println("You guessed correct and got 1 point, your score is " + player.getPlayerPoints());
+            System.out.println( player.getPlayerName() +" guessed correct and got 1 point, your score is " + player.getPlayerPoints());
             
         }
 
         else {
-            System.out.println("You guessed wrong, your score is " + player.getPlayerPoints());
+            System.out.println( player.getPlayerName() + " guessed wrong, your score is " + player.getPlayerPoints());
         }
 
         if (currentRound == howManyRounds) {
 
-          System.out.println("The game has ended, your score was: " + player.getPlayerPoints());
+          System.out.println("The game has ended, " + player.getPlayerName() + " score was: " + player.getPlayerPoints());
           playing = false;
         }
 
