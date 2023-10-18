@@ -1,3 +1,4 @@
+package DiceGameInlämmning;
 import  java.util.Random;
 public class Die {
     private int maxValue;

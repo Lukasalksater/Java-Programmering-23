@@ -1,3 +1,4 @@
+package DiceGameInlämmning;
 public class Player  {
 
    private int playerPoint;
