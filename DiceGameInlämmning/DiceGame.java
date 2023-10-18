@@ -20,7 +20,7 @@ public class DiceGame {
 
         System.out.println("How many sides does your dice have?");
         int maxDiceValue = scanner.nextInt();
-        Die playerDice = new Die(maxDiceValue);
+        Die playerDice = player.addDie(maxDiceValue);
 
 
         
