@@ -8,6 +8,10 @@ public class DiceGame {
     
    
     public static void main(String[] args) {
+
+        System.out.println("What is your name?");
+        String playerName = scanner.nextLine();
+        Player player = new Player(playerName);
      
 
         System.out.println("How many rounds do you want to play?");
@@ -17,9 +21,7 @@ public class DiceGame {
         int maxDiceValue = scanner.nextInt();
         Die playerDice = new Die(maxDiceValue);
 
-        System.out.println("What is your name?");
-        String playerName = scanner.nextLine();
-        Player player = new Player(playerName);
+
         
 
         playGame(rounds, player, playerDice);  
@@ -57,6 +59,8 @@ public class DiceGame {
         }
 
         if (currentRound == howManyRounds) {
+
+          System.out.println("The game has ended, your score was: " + player.getPlayerPoints());
           playing = false;
         }
 
