@@ -30,10 +30,10 @@ public class DiceGame {
     }
 
 
-    public static void playGame (int howManyRounds, Player player, Die playerDice){
+    public static void playGame (int maxRounds, Player player, Die playerDice){
 
         
-       int currentRound = howManyRounds - howManyRounds + 1;
+       int currentRound =  1;
 
 
      while (playing) {
@@ -59,7 +59,7 @@ public class DiceGame {
             System.out.println( player.getPlayerName() + " guessed wrong, your score is " + player.getPlayerPoints());
         }
 
-        if (currentRound == howManyRounds) {
+        if (currentRound == maxRounds) {
 
           System.out.println("The game has ended, " + player.getPlayerName() + " score was: " + player.getPlayerPoints());
           playing = false;
